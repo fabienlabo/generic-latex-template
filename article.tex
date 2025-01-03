@@ -1,0 +1,45 @@
+% !TEX program = lualatex
+% region %%%%%%% document class & geometry %%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage[%
+  top=2.5cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm
+]{geometry}
+% endregion ==================
+
+% region core packages %%%%%%%%%%%
+\usepackage{%
+  tikz,
+  authblk,
+  graphicx,
+  lineno,
+  csquotes,% loaded after lineno to avoid warning
+  microtype,
+  subcaption,% provides the subcaptionblock (subfigure) env.
+  tabularray,
+  siunitx,% for proper typesetting of units
+  xcolor,% to define custom color
+}
+\usepackage[section]{placeins}% ensures figures stays in their sections
+\usepackage[version=4]{mhchem}% typeset chemical formulas
+% endregion ==================
+
+\input{custom.tex}% other custom settings and commands
+\input{titleauthors.tex}
+\input{ref_settings.tex}% biblatex settings
+
+%%%%%%%%%% document body %%%%%%%%%%%
+\begin{document}
+\maketitle
+\input{abstract.tex}% contains keywords
+
+\linenumbers
+\input{introduction.tex}
+\input{matmed.tex}
+\input{results.tex}
+\input{discussion.tex}
+\input{acknowledgements_etc.tex}
+\printbibliography
+\end{document}

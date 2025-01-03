@@ -1,0 +1,35 @@
+\usepackage[%
+  backend=biber,
+  style=authoryear,
+  uniquename=init,
+  giveninits=true,
+  doi=false,
+  isbn=false,
+  eprint=false,
+  url=false,
+  date=year,
+  sorting=ydnt,
+  maxcitenames=1,
+  mincitenames=1,
+  maxbibnames=12,
+  minbibnames=2,
+]{biblatex}
+
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\small}% define biblio font
+\renewbibmacro{in:}{}% remove "in" before journal
+\DeclareFieldFormat{labelnumberwidth}{#1.\space}% remove square brackets in biblio
+\DeclareFieldFormat{journaltitle}{#1\isdot}% ensure journal name is upright
+
+\DefineBibliographyStrings{english}{% make et al in italic
+  andothers = {\mkbibemph{et\addabbrvspace al\adddot}}}
+% remove comma before "et al"
+\DefineBibliographyExtras{english}{%
+  \let\finalandcomma=\empty
+  \let\finalandsemicolon=\empty
+}
+
+\AtEveryBibitem{%
+  \clearfield{volume}% remove vol. number
+  \clearfield{number}% remove issue number
+}

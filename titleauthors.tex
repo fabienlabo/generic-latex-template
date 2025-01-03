@@ -1,0 +1,13 @@
+% region fix superscript for authblk package
+\makeatletter
+\renewcommand\AB@authnote[1]{{\normalfont\textsuperscript{#1}}}
+\renewcommand\AB@affilnote[1]{{\normalfont\textsuperscript{#1}}}
+\makeatother
+% endregion fix superscript ====
+\title{Informative title proves to be helpful to unsuspecting reader}
+\author[1,*]{Immanual Kant}
+\author[1]{Michael Clouscard}
+\author[1, 2]{György Lokács}
+\affil[1]{Department of Philosophy, University of Milan}
+\affil[2]{Department of Biology, Polish Institute of Sciences}
+\affil[*]{correspondance: ikant@help.it}

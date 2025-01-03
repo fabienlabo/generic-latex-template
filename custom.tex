@@ -1,0 +1,34 @@
+\usepackage{kantlipsum}% for dummy text!
+
+\usepackage{cochineal}% define fonts
+\usepackage[scaled]{helvet}
+\renewcommand{\sfdefault}{phv}
+
+\graphicspath{{./img/}}% path for images
+
+\UseTblrLibrary{booktabs}% for nicer-looking tables
+
+\sisetup{mode=match}% print units in same font as surrounding text
+
+\renewcommand{\thesubfigure}{% format of fig refs in legends
+  \sffamily
+  \textbf{(\Alph{subfigure})}
+}
+
+% region disable line numbers for section titles
+\makeatletter
+\patchcmd{\@startsection}{\@ifstar}{\nolinenumbers\@ifstar}{}{}
+\patchcmd{\@xsect}{\ignorespaces}{\linenumbers\ignorespaces}{}{}
+\makeatother
+% endregion
+
+% region comment large portion of text
+\newbool{hideswitch}% boolean for commented code
+\booltrue{hideswitch}% ignore commented code by default
+%\boolfalse{hideswitch}% uncomment this line to print out/run commented text
+\newcommand{\hide}[1]{%
+  \ifbool{hideswitch}
+    {}% output nothing if boolean true
+    {#1\ignorespaces}% else print out/run comment
+}
+% endregion
