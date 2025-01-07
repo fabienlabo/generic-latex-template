@@ -3,7 +3,6 @@ Make sure you have all needed packages installed, they are listed in the [articl
 
 Two rounds of compilation may be needed to get the references right.
 
-![screenshot 1](/preview/scrot1.png)
-![screenshot 2](/preview/scrot2.png)
-![screenshot 3](/preview/scrot3.png)
-![screenshot 4](/preview/scrot4.png)
+![screenshot 1](/preview/scrot1.jpg)
+![screenshot 2](/preview/scrot2.jpg)
+![screenshot 3](/preview/scrot3.jpg)
